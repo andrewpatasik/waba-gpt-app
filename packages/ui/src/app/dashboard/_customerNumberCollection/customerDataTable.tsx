@@ -1,12 +1,6 @@
 "use client";
 
 import {
-  ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import {
   Table,
   TableBody,
   TableCell,
@@ -14,17 +8,24 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
 import { useState } from "react";
 
-interface DataTableProps<TData, TValue> {
+interface CustomerDataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
-const DataTable = <TData, TValue>({
+const CustomerDataTable = <TData, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) => {
+}: CustomerDataTableProps<TData, TValue>) => {
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
@@ -32,15 +33,15 @@ const DataTable = <TData, TValue>({
     data,
     getCoreRowModel: getCoreRowModel(),
     onRowSelectionChange: setRowSelection,
-    enableMultiRowSelection: false,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       rowSelection,
     },
   });
 
   return (
-    <div>
-      <div className="rounded-md border">
+    <div className="flex flex-col justify-between h-full pb-2">
+      <div>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -86,8 +87,13 @@ const DataTable = <TData, TValue>({
           </TableBody>
         </Table>
       </div>
+
+      <div className="mt-auto text-right text-sm text-slate-400">
+        {table.getFilteredSelectedRowModel().rows.length} of{" "}
+        {table.getFilteredRowModel().rows.length} row(s) selected.
+      </div>
     </div>
   );
 };
 
-export default DataTable;
+export default CustomerDataTable;
