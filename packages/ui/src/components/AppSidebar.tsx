@@ -1,5 +1,5 @@
 'use client'
-import { LayoutDashboard, PartyPopper } from "lucide-react";
+import { LayoutDashboard, PartyPopper, Megaphone, User } from "lucide-react";
 import {
   Sidebar,
   SidebarHeader,
@@ -19,9 +19,19 @@ const items = [
     icon: LayoutDashboard,
   },
   {
+    title: "Broadcast",
+    url: "/broadcast",
+    icon: Megaphone,
+  },
+  {
     title: "Campaign",
     url: "/campaign",
     icon: PartyPopper,
+  },
+  {
+    title: "Account",
+    url: "/account",
+    icon: User,
   },
 ];
 

@@ -1,3 +1,4 @@
+import BroadcastDetail from "./_broadcastDetail";
 import CampaignForm from "./_form";
 import ProductList from "./_productList";
 
@@ -8,6 +9,7 @@ const Page = () => {
         <ProductList />
         <CampaignForm />
       </div>
+      <BroadcastDetail />
     </div>
   );
 };
