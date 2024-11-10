@@ -22,6 +22,7 @@ const TopBar = ({ data }: topBarProps) => {
         <Phone className="w-4" />
         <span>{data.display_phone_number}</span>
       </p>
+      {/* quality rating here */}
     </nav>
   );
 };
