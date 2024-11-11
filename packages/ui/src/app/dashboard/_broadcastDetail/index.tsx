@@ -7,8 +7,8 @@ const BroadcastDetail = () => {
     <div className="flex flex-col w-full">
       <CustomerNumberList />
 
-      <div className="flex mt-auto px-4 h-16 border-t items-center justify-end">
-        <Button variant={"default"}>
+      <div className="flex px-4 h-16 border-t items-center justify-end">
+        <Button variant={"outline"} className="hover:bg-black hover:text-white border-slate-500">
           <Send />
           <span>Send Message</span>
         </Button>

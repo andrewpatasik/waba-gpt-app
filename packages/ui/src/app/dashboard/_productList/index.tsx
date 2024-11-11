@@ -14,6 +14,11 @@ const itemCollection:ItemCollection[]  = [
     description:
       "Rich, fudgy brownies or lighter, cakey brownies. Absolute yummy!",
   },
+  {
+    name: "Choco Cookies",
+    description:
+      "From classic chocolate chip to sugar cookies and oatmeal raisin.",
+  },
 ];
 
 

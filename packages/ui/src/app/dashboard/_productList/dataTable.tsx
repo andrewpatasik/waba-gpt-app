@@ -40,9 +40,9 @@ const DataTable = <TData, TValue>({
 
   return (
     <div>
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
+      <div className="rounded-md border max-h-56 overflow-y-scroll">
+        <Table className="max-h-11">
+          <TableHeader className="sticky top-0 bg-white">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
@@ -59,7 +59,7 @@ const DataTable = <TData, TValue>({
             ))}
           </TableHeader>
 
-          <TableBody>
+          <TableBody className="w-full">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>

@@ -29,12 +29,10 @@ const CampaignForm = () => {
   return (
     <section>
       <div className="mb-3">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Promo Detail
-        </h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Promo Detail</h1>
         <p className="text-sm text-slate-400 tracking-wide leading-snug">
-          Describe your promo below and submit to our AI Agent to generate
-          an optimized promotional message.
+          Describe your promo below and submit to generate an
+          optimized promotional message.
         </p>
       </div>
       <Form {...form}>
@@ -59,10 +57,12 @@ const CampaignForm = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">
-            <Sparkles />
-            <span>Generate Promo</span>
-          </Button>
+          <div className="w-full text-right">
+            <Button type="submit">
+              <Sparkles />
+              <span>Generate Promo</span>
+            </Button>
+          </div>
         </form>
       </Form>
     </section>

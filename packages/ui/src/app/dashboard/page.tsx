@@ -5,7 +5,7 @@ import ProductList from "./_productList";
 const Page = () => {
   return (
     <div className="flex flex-row w-full h-full">
-      <div className="flex flex-col w-2/5 h-full space-y-10 px-4 pt-6 border-r">
+      <div className="flex flex-col w-2/3 h-full space-y-8 px-4 pt-6 border-r">
         <ProductList />
         <CampaignForm />
       </div>

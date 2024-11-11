@@ -22,15 +22,11 @@ export const columns: ColumnDef<ItemCollection>[] = [
   {
     accessorKey: "name",
     header: "Name",
-    cell: ({ cell }) => (
-      <p className="min-w-28">{cell.getValue() as String}</p>
-    ),
+    cell: ({ cell }) => <p className="min-w-28">{cell.getValue() as String}</p>,
   },
   {
     accessorKey: "description",
     header: "Description",
-    cell: ({ cell }) => (
-      <p>{cell.getValue() as String}</p>
-    ),
+    cell: ({ cell }) => <p>{cell.getValue() as String}</p>,
   },
 ];

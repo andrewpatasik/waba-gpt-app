@@ -41,9 +41,9 @@ const CustomerDataTable = <TData, TValue>({
 
   return (
     <div className="flex flex-col justify-between h-full pb-2">
-      <div>
+      <div className="max-h-[calc(100vh-13rem)] overflow-y-scroll">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 bg-white">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
@@ -88,7 +88,7 @@ const CustomerDataTable = <TData, TValue>({
         </Table>
       </div>
 
-      <div className="mt-auto text-right text-sm text-slate-400">
+      <div className="mt-auto mr-4 text-right text-sm text-slate-400">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>

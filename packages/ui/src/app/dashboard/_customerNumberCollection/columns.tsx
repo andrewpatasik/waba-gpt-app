@@ -30,15 +30,15 @@ export const columns: ColumnDef<CustomerNumberCollection>[] = [
     ),
   },
   {
-    accessorKey: "number",
-    header: "Number",
+    accessorKey: "name",
+    header: "Name",
     cell: ({ cell }) => (
       <p>{cell.getValue() as String}</p>
     ),
   },
   {
-    accessorKey: "name",
-    header: "Name",
+    accessorKey: "number",
+    header: "Number",
     cell: ({ cell }) => (
       <p>{cell.getValue() as String}</p>
     ),
