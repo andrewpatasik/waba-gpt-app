@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
-  const data = await fetchData();
+  const { data } = await fetchData();
 
   return (
     <section className="w-full">
-      <TopBar data={data?.data} />
+      <TopBar data={data} />
       <main className="pt-10 h-full">{children}</main>
     </section>
   );

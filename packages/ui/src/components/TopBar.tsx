@@ -7,7 +7,7 @@ type topBarProps = {
 const TopBar = ({ data }: topBarProps) => {
 
   return (
-    <nav className="fixed w-full h-10 border-b flex items-center p-2 bg-white">
+    <nav className="fixed w-full h-11 border-b flex items-center p-2 bg-white">
       <p className="text-sm flex space-x-1 items-center text-slate-400">
         <Zap className="w-4 fill-yellow-400 text-yellow-400" />
         <span className="font-semibold">100 credits</span>
@@ -15,12 +15,12 @@ const TopBar = ({ data }: topBarProps) => {
       <Dot className="text-slate-400" />
       <p className="flex space-x-1 items-center text-sm text-slate-400">
         <User className="w-4" />
-        <span>{data.verified_name}</span>
+        <span>{data?.verified_name ? data.verified_name : 'user not found'}</span>
       </p>
       <Dot className="text-slate-400" />
       <p className="flex space-x-1 items-center text-sm text-slate-400">
         <Phone className="w-4" />
-        <span>{data.display_phone_number}</span>
+        <span>{data?.display_phone_number ? data.display_phone_number : 'phone number not found'}</span>
       </p>
       {/* quality rating here */}
     </nav>

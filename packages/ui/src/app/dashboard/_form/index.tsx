@@ -15,15 +15,43 @@ import { z } from "zod";
 import { formSchema } from "./formSchema";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { templateSchema } from "./templateSchema";
+import { useTemplatePreview } from "@/hooks";
 
 const CampaignForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { promoDescription: "" },
+    defaultValues: {
+      promoDescription:
+        "Indulge in the perfect bite of heaven! Our freshly baked cookies, from classic chocolate chip to oatmeal raisin, are sure to satisfy your cravings.",
+    },
   });
 
+  const {updateTemplateState} = useTemplatePreview();
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    const template: z.infer<typeof templateSchema> = {
+      name: "Template Preview",
+      language: "en_US",
+      category: "MARKETING",
+      components: [
+        {
+          type: "HEADER",
+          format: "TEXT",
+          text: "Preview",
+        },
+        {
+          type: "BODY",
+          text: values.promoDescription,
+        },
+        {
+          type: "FOOTER",
+          text: "Template created from WhatsApp API",
+        },
+      ],
+    };
+
+    updateTemplateState(template);
   };
 
   return (
@@ -31,8 +59,8 @@ const CampaignForm = () => {
       <div className="mb-3">
         <h1 className="text-2xl font-semibold tracking-tight">Promo Detail</h1>
         <p className="text-sm text-slate-400 tracking-wide leading-snug">
-          Describe your promo below and submit to generate an
-          optimized promotional message.
+          Describe your promo below and submit to generate an optimized
+          promotional message.
         </p>
       </div>
       <Form {...form}>
