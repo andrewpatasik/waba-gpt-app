@@ -38,7 +38,7 @@ const CampaignForm = () => {
         {
           type: "HEADER",
           format: "TEXT",
-          text: "Preview",
+          text: "November Promo",
         },
         {
           type: "BODY",
@@ -46,7 +46,7 @@ const CampaignForm = () => {
         },
         {
           type: "FOOTER",
-          text: "Template created from WhatsApp API",
+          text: "template created using WhatsApp API.",
         },
       ],
     };

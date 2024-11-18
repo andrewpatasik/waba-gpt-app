@@ -21,7 +21,8 @@ const TemplatePreviewCard = ({
         element = <p className="mt-3 text-sm text-slate-400">{item.text}</p>;
         break;
 
-      default:
+        // HEADER
+      default :
         element = <h1 className="text-lg mb-1 font-semibold">{item.text}</h1>;
         break;
     }
@@ -30,7 +31,7 @@ const TemplatePreviewCard = ({
   }, []);
 
   return (
-    <div className="relative bg-white w-2/3 border rounded-tl-2xl rounded-bl-2xl rounded-tr-2xl shadow-sm px-4 py-4">
+    <div className="relative bg-white w-3/4 border rounded-tl-2xl rounded-bl-2xl rounded-tr-2xl shadow-sm px-4 py-4">
       {cardItem.map((item: any, index: number) => (
         <Fragment key={index}>{item}</Fragment>
       ))}
@@ -42,7 +43,7 @@ const TemplatePreview = () => {
   const { templateState } = useTemplatePreview();
 
   return (
-    <section className="bg-slate-100">
+    <section className="w-full bg-slate-100">
       <div className="mb-3 pt-6 px-3">
         <h1 className="text-2xl font-semibold tracking-tight">
           Template Preview
