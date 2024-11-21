@@ -27,7 +27,7 @@ const CampaignForm = () => {
     },
   });
 
-  const {updateTemplateState} = useTemplatePreview();
+  const { updateTemplate } = useTemplatePreview();
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     const template: z.infer<typeof templateSchema> = {
@@ -51,7 +51,7 @@ const CampaignForm = () => {
       ],
     };
 
-    updateTemplateState(template);
+    updateTemplate(template);
   };
 
   return (

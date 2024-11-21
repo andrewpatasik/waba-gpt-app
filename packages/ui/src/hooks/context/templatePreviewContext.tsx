@@ -5,30 +5,29 @@ import React, { createContext, useContext, useState } from "react";
 import { z } from "zod";
 
 interface ITemplatePreviewContext {
-  templateState: z.infer<typeof templateSchema> | null;
-  updateTemplateState: (value: z.infer<typeof templateSchema>) => void;
+  template: z.infer<typeof templateSchema> | null;
+  updateTemplate: (value: z.infer<typeof templateSchema>) => void;
 }
 
-const TemplatePreviewContext = createContext<any>(
-  null
-);
+const TemplatePreviewContext = createContext<ITemplatePreviewContext>({
+  template: null,
+  updateTemplate: () => {},
+});
 
 export const TemplatePreviewProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [templateState, setTemplateState] = useState<z.infer<
+  const [template, setTemplate] = useState<z.infer<
     typeof templateSchema
   > | null>(null);
 
-  const updateTemplateState = (value: z.infer<typeof templateSchema>) =>
-    setTemplateState((prevState) => value);
+  const updateTemplate = (value: z.infer<typeof templateSchema>) =>
+    setTemplate(value);
 
   return (
-    <TemplatePreviewContext.Provider
-      value={{ templateState, updateTemplateState }}
-    >
+    <TemplatePreviewContext.Provider value={{ template, updateTemplate }}>
       {children}
     </TemplatePreviewContext.Provider>
   );

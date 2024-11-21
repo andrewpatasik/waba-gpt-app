@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
-  const { data } = await fetchData();
+  const { data } = await fetchData(process.env.PHONE_NUMBER_ID);
 
   return (
     <section className="w-full">
