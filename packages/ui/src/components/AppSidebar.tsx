@@ -1,5 +1,5 @@
 'use client'
-import { LayoutDashboard, PartyPopper, Megaphone, User } from "lucide-react";
+import { MessageSquare, SwatchBook, PartyPopper, Megaphone, User } from "lucide-react";
 import {
   Sidebar,
   SidebarHeader,
@@ -14,9 +14,9 @@ import { usePathname } from "next/navigation";
 
 const items = [
   {
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: LayoutDashboard,
+    title: "Chats",
+    url: "/chats",
+    icon: MessageSquare,
   },
   {
     title: "Broadcast",
@@ -24,15 +24,10 @@ const items = [
     icon: Megaphone,
   },
   {
-    title: "Campaign",
-    url: "/campaign",
-    icon: PartyPopper,
-  },
-  {
-    title: "Account",
-    url: "/account",
-    icon: User,
-  },
+    title: "Templates",
+    url: "/templates",
+    icon: SwatchBook,
+  }
 ];
 
 const AppSidebar = () => {

@@ -53,13 +53,13 @@ const TemplatePreview = () => {
         templatePayload
       );
 
-      if (error) throw new Error("data not found");
+      if (error) throw new Error(error);
 
-      if (data.STATUS === "PENDING")
-        console.log("Template successfully created. Waiting for review.");
-      else console.log("Failed to create Template.");
+      if (data.status === "PENDING")
+        console.info("Template successfully created. Waiting for review.");
+      else console.warn("Failed to create Template.");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

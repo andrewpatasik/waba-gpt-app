@@ -7,7 +7,7 @@ const componentsSchema = z.object({
 });
 
 export const templateSchema = z.object({
-  name: z.string(),
+  name: z.string(), // name can only have lower-case letters and underscores.
   language: z.enum(["en_US"]),
   category: z.enum(["AUTHENTICATION", "MARKETING", "UTILITY"]),
   components: z.array(componentsSchema),

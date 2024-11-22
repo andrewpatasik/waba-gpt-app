@@ -31,7 +31,7 @@ const CampaignForm = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     const template: z.infer<typeof templateSchema> = {
-      name: "Template Preview",
+      name: "test_template_for_hunnie",
       language: "en_US",
       category: "MARKETING",
       components: [
@@ -46,7 +46,7 @@ const CampaignForm = () => {
         },
         {
           type: "FOOTER",
-          text: "template created using WhatsApp API.",
+          text: "message sent via WhatsApp API. Do not reply",
         },
       ],
     };

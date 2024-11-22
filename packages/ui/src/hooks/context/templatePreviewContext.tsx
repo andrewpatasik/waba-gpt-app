@@ -1,6 +1,6 @@
 "use client";
 
-import { templateSchema } from "@/app/dashboard/_form/templateSchema";
+import { templateSchema } from "@/app/templates/_form/templateSchema";
 import React, { createContext, useContext, useState } from "react";
 import { z } from "zod";
 
