@@ -4,8 +4,6 @@ import { useTemplatePreview } from "@/hooks";
 import { z } from "zod";
 import { templateSchema } from "../_form/templateSchema";
 import { Fragment } from "react";
-import { Button } from "@/components/ui/button";
-import { postData } from "@/lib/utils";
 
 const TemplatePreviewCard = ({
   props,
@@ -44,25 +42,6 @@ const TemplatePreviewCard = ({
 const TemplatePreview = () => {
   const { template } = useTemplatePreview();
 
-  const handleSaveTemplateEvent = async (
-    templatePayload: z.infer<typeof templateSchema>
-  ) => {
-    try {
-      const { data, error } = await postData(
-        "message_templates",
-        templatePayload
-      );
-
-      if (error) throw new Error(error);
-
-      if (data.status === "PENDING")
-        console.info("Template successfully created. Waiting for review.");
-      else console.warn("Failed to create Template.");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <section className="w-full bg-slate-100 flex flex-col flex-1">
       <div className="mb-3 pt-6 px-3">
@@ -80,18 +59,6 @@ const TemplatePreview = () => {
           <TemplatePreviewCard props={template} />
         )}
       </article>
-
-      {template && (
-        <div className="mx-auto my-12">
-          <Button
-            onClick={() => handleSaveTemplateEvent(template)}
-            variant={"outline"}
-            className="border-slate-300"
-          >
-            Save Template
-          </Button>
-        </div>
-      )}
     </section>
   );
 };
