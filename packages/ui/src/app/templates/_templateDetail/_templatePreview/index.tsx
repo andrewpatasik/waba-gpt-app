@@ -2,7 +2,7 @@
 
 import { useTemplatePreview } from "@/hooks";
 import { z } from "zod";
-import { templateSchema } from "../_form/templateSchema";
+import { templateSchema } from "../../_form/templateSchema";
 import { Fragment } from "react";
 
 const TemplatePreviewCard = ({
@@ -15,15 +15,31 @@ const TemplatePreviewCard = ({
 
     switch (item.type) {
       case "BODY":
-        element = <p>{item.text}</p>;
+        element = (
+          <p>
+            {item.text
+              ? item.text
+              : "Your promo content goes here, this section will describe your product, discount and every perks for your customers."}
+          </p>
+        );
         break;
       case "FOOTER":
-        element = <p className="mt-3 text-sm text-slate-400">{item.text}</p>;
+        element = (
+          <p className="mt-3 text-sm text-slate-400">
+            {item.text
+              ? item.text
+              : "This message sent via WhatsApp API. Please don't reply"}
+          </p>
+        );
         break;
 
       // HEADER
       default:
-        element = <h1 className="text-lg mb-1 font-semibold">{item.text}</h1>;
+        element = (
+          <h1 className="text-lg mb-1 font-semibold">
+            {item.text ? item.text : "This is Your Promo Title ✨"}
+          </h1>
+        );
         break;
     }
 

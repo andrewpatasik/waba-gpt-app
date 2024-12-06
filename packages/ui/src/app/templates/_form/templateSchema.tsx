@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const componentsSchema = z.object({
+export const componentsSchema = z.object({
   type: z.string(),
   format: z.string().optional(),
   text: z.string(),

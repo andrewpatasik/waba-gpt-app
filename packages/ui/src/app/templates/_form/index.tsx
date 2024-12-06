@@ -31,7 +31,7 @@ const CampaignForm = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     const template: z.infer<typeof templateSchema> = {
-      name: "test_template_for_hunnie",
+      name: "dev_template_mark_dec_01",
       language: "en_US",
       category: "MARKETING",
       components: [

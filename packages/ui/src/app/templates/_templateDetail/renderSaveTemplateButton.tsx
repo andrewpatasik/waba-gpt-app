@@ -38,11 +38,8 @@ const RenderSaveTemplateButton = () => {
           handleSaveTemplateEvent(template as z.infer<typeof templateSchema>)
         }
         variant={"outline"}
-        className={`${
-          !template
-            ? "hover:cursor-not-allowed"
-            : "hover:bg-black hover:text-white"
-        }  border-slate-500`}
+        className="hover:bg-black hover:text-white border-slate-500"
+        disabled={!template}
       >
         <Send />
         <span>Save Template</span>

@@ -1,5 +1,5 @@
-import CustomerNumberList from "../_customerNumberCollection";
-import TemplatePreview from "../_templatePreview";
+import TemplateEditor from "./_templateEditor";
+import TemplatePreview from "./_templatePreview";
 import RenderSaveTemplateButton from "./renderSaveTemplateButton";
 
 const TemplateDetail = () => {
@@ -8,7 +8,7 @@ const TemplateDetail = () => {
     <div className="flex flex-col w-full h-full">
       <div className="flex h-full">
         <TemplatePreview />
-        <CustomerNumberList />
+        <TemplateEditor />
       </div>
 
       <RenderSaveTemplateButton />
